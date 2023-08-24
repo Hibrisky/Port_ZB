@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/2.Title.unity
     guid: 658df1ad7aecfdb44b996a4765ba6bd5
   - enabled: 1
-    path: Assets/Resources/SimplePoly City - Low Poly Assets/Demo/testSceneChange.unity
+    path: Assets/Supports/SimplePoly City - Low Poly Assets/Demo/testSceneChange.unity
     guid: 7e6d3f4e5d896154ab4438845532ac3e
   m_configObjects: {}
