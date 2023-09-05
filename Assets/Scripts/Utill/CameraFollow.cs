@@ -23,7 +23,6 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         CameraMove();
-        OtstacleRenderer();
     }
 
     void CameraMove()
@@ -33,26 +32,27 @@ public class CameraFollow : MonoBehaviour
         _cameraPos.transform.LookAt(target.transform);
     }
 
-    void OtstacleRenderer()
-    {
-        float distance = Vector3.Distance(transform.position, target.transform.position);
-        Vector3 direction = (target.transform.position - transform.position).normalized;
+    //플레이어를 가린 물체(건물,차 등등) 반투명 시도..
+    //void OtstacleRenderer()
+    //{
+    //    float distance = Vector3.Distance(transform.position, target.transform.position);
+    //    Vector3 direction = (target.transform.position - transform.position).normalized;
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, direction, out hit, distance))
-        {
-            obstacleRenderer = hit.transform.gameObject.GetComponentInChildren<Renderer>();
+    //    RaycastHit hit;
+    //    if (Physics.Raycast(transform.position, direction, out hit, distance))
+    //    {
+    //        obstacleRenderer = hit.transform.gameObject.GetComponentInChildren<Renderer>();
 
-            if(obstacleRenderer.tag == "Obstacle")
-            {
-                if (obstacleRenderer != null)
-                {
-                    Material mat = obstacleRenderer.material;
-                    Color matColor = mat.color;
-                    matColor.a = 0.5f;
-                    mat.color = matColor;
-                }
-            }
-        }
-    }
+    //        if(obstacleRenderer.tag == "Obstacle")
+    //        {
+    //            if (obstacleRenderer != null)
+    //            {
+    //                Material mat = obstacleRenderer.material;
+    //                Color matColor = mat.color;
+    //                matColor.a = 0.5f;
+    //                mat.color = matColor;
+    //            }
+    //        }
+    //    }
+    //}
 }
